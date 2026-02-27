@@ -1,4 +1,4 @@
-/assetpack/
+/.assetpack/
 /dist/
 /node_modules/
 !public/
