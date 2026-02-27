@@ -1,0 +1,142 @@
+{
+  "bundles": [
+    {
+      "name": "default",
+      "assets": []
+    },
+    {
+      "name": "fonts",
+      "assets": [
+        {
+          "alias": [
+            "fonts/jersey.ttf",
+            "jersey.ttf"
+          ],
+          "src": [
+            "fonts/jersey-OQgedw.ttf"
+          ],
+          "data": {
+            "tags": {
+              "m": true,
+              "family": "Jersey"
+            },
+            "family": "Jersey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "sprites",
+      "assets": [
+        {
+          "alias": [
+            "sprites/pngs",
+            "pngs"
+          ],
+          "src": [
+            "sprites/pngs-te19ZQ.webp.json",
+            "sprites/pngs-s0KX8Q@0.5x.webp.json",
+            "sprites/pngs-d1uh@0.5x.png.json",
+            "sprites/pngs-3tJGXA.png.json"
+          ],
+          "data": {
+            "tags": {
+              "m": true,
+              "tps": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "textures",
+      "assets": [
+        {
+          "alias": [
+            "textures/background.png",
+            "background.png"
+          ],
+          "src": [
+            "textures/background-Pn3l_A@0.5x.webp",
+            "textures/background-ls_ylA.webp",
+            "textures/background-iBxTHg.png",
+            "textures/background-8dLZrw@0.5x.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "alias": [
+            "textures/bg.png",
+            "bg.png"
+          ],
+          "src": [
+            "textures/bg-r-go.png",
+            "textures/bg-leb1@0.5x.webp",
+            "textures/bg-IHBV2Q.webp",
+            "textures/bg-H3qAyw@0.5x.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "alias": [
+            "textures/snow.png",
+            "snow.png"
+          ],
+          "src": [
+            "textures/snow-zKuOSw@0.5x.png",
+            "textures/snow-VlfFvw@0.5x.webp",
+            "textures/snow-oOWl-g.webp",
+            "textures/snow-4V8K3w.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "alias": [
+            "textures/title.png",
+            "title.png"
+          ],
+          "src": [
+            "textures/title-s_8bsg.webp",
+            "textures/title-rdMaKw.png",
+            "textures/title-QSAsLg@0.5x.png",
+            "textures/title-7Qa3mA@0.5x.webp"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "alias": [
+            "textures/gameover.png",
+            "gameover.png"
+          ],
+          "src": [
+            "textures/gameover-WS876w@0.5x.webp",
+            "textures/gameover-QxLRhw.webp",
+            "textures/gameover-8l0Y2Q@0.5x.png",
+            "textures/gameover-1fM03g.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

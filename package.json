@@ -1,0 +1,20 @@
+{
+	"name": "ski-nwcc",
+	"version": "1.0.0",
+	"main": "src/index.js",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"author": "Kevin Foley",
+	"license": "MIT",
+	"devDependencies": {
+		"@assetpack/core": "^1.7.0",
+		"vite": "^7.3.1"
+	},
+	"dependencies": {
+		"pixi-filters": "^6.1.5",
+		"pixi.js": "^8.2.0"
+	}
+}
