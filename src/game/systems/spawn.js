@@ -1,13 +1,15 @@
 import { Tree } from "../entities/tree";
 import { Rock } from "../entities/rock";
-import { Doggie } from "../entities/doggie";
+import { Doggie, Laser } from "../entities/doggie";
 import { SlalomCourse } from "../entities/slalom";
 import { NewLife } from "../entities/newLife";
+import { Ramp } from "../entities/ramp";
 const spawnProbabilities = {
     'tree': 0.5,
     'rock': 0.3,
     'slalom': 0.02,
     'newLife': 0.04,
+    'ramp': 0.34
 }
 
 export class SpawnManager {
@@ -57,7 +59,7 @@ export class SpawnManager {
     }
 
     spawnEntity() {
-        const entityTypes = { 'tree': Tree, 'rock': Rock, 'slalom': SlalomCourse, 'newLife': NewLife }; // add more entity types here
+        const entityTypes = { 'tree': Tree, 'rock': Rock, 'slalom': SlalomCourse, 'newLife': NewLife, 'ramp': Ramp }; // add more entity types here
         const totalProbability = Object.values(spawnProbabilities).reduce((sum, prob) => sum + prob, 0);
         const randomValue = Math.random() * totalProbability;
         let cumulativeProbability = 0;
@@ -125,7 +127,7 @@ export class SpawnManager {
 
         // if the entity is a tree, there is a chance that a doggie will spawn behind it
         if (selectedEntityType === 'tree' && Math.random() < 0.15) {
-            const doggie = new Doggie();
+            const doggie = new Doggie(this.scene.difficulty === 'extreme' || this.scene.difficulty === 'impossible');
             doggie.x = entity.x;
             doggie.y = entity.y
             doggie.scale.set(Math.random() < 0.5 ? -1 * doggie.scale._x : doggie.scale._x, doggie.scale._y); // randomly flip the doggie horizontally

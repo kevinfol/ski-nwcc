@@ -9,18 +9,19 @@
       "assets": [
         {
           "alias": [
-            "fonts/jersey.ttf",
-            "jersey.ttf"
+            "fonts/Jersey.ttf",
+            "Jersey.ttf"
           ],
           "src": [
-            "fonts/jersey-OQgedw.ttf"
+            "fonts/Jersey.fnt"
           ],
           "data": {
             "tags": {
               "m": true,
-              "family": "Jersey"
+              "msdf": true,
+              "family": "Jersey{msdf}"
             },
-            "family": "Jersey"
+            "family": "Jersey{msdf}"
           }
         }
       ]
@@ -34,10 +35,10 @@
             "pngs"
           ],
           "src": [
-            "sprites/pngs-te19ZQ.webp.json",
-            "sprites/pngs-s0KX8Q@0.5x.webp.json",
-            "sprites/pngs-d1uh@0.5x.png.json",
-            "sprites/pngs-3tJGXA.png.json"
+            "sprites/pngs@0.5x.webp.json",
+            "sprites/pngs@0.5x.png.json",
+            "sprites/pngs.webp.json",
+            "sprites/pngs.png.json"
           ],
           "data": {
             "tags": {
@@ -57,10 +58,10 @@
             "background.png"
           ],
           "src": [
-            "textures/background-Pn3l_A@0.5x.webp",
-            "textures/background-ls_ylA.webp",
-            "textures/background-iBxTHg.png",
-            "textures/background-8dLZrw@0.5x.png"
+            "textures/background@0.5x.webp",
+            "textures/background@0.5x.png",
+            "textures/background.webp",
+            "textures/background.png"
           ],
           "data": {
             "tags": {
@@ -74,44 +75,10 @@
             "bg.png"
           ],
           "src": [
-            "textures/bg-r-go.png",
-            "textures/bg-leb1@0.5x.webp",
-            "textures/bg-IHBV2Q.webp",
-            "textures/bg-H3qAyw@0.5x.png"
-          ],
-          "data": {
-            "tags": {
-              "m": true
-            }
-          }
-        },
-        {
-          "alias": [
-            "textures/snow.png",
-            "snow.png"
-          ],
-          "src": [
-            "textures/snow-zKuOSw@0.5x.png",
-            "textures/snow-VlfFvw@0.5x.webp",
-            "textures/snow-oOWl-g.webp",
-            "textures/snow-4V8K3w.png"
-          ],
-          "data": {
-            "tags": {
-              "m": true
-            }
-          }
-        },
-        {
-          "alias": [
-            "textures/title.png",
-            "title.png"
-          ],
-          "src": [
-            "textures/title-s_8bsg.webp",
-            "textures/title-rdMaKw.png",
-            "textures/title-QSAsLg@0.5x.png",
-            "textures/title-7Qa3mA@0.5x.webp"
+            "textures/bg@0.5x.webp",
+            "textures/bg@0.5x.png",
+            "textures/bg.webp",
+            "textures/bg.png"
           ],
           "data": {
             "tags": {
@@ -125,10 +92,44 @@
             "gameover.png"
           ],
           "src": [
-            "textures/gameover-WS876w@0.5x.webp",
-            "textures/gameover-QxLRhw.webp",
-            "textures/gameover-8l0Y2Q@0.5x.png",
-            "textures/gameover-1fM03g.png"
+            "textures/gameover@0.5x.webp",
+            "textures/gameover@0.5x.png",
+            "textures/gameover.webp",
+            "textures/gameover.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "alias": [
+            "textures/snow.png",
+            "snow.png"
+          ],
+          "src": [
+            "textures/snow@0.5x.webp",
+            "textures/snow@0.5x.png",
+            "textures/snow.webp",
+            "textures/snow.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "alias": [
+            "textures/title.png",
+            "title.png"
+          ],
+          "src": [
+            "textures/title@0.5x.webp",
+            "textures/title@0.5x.png",
+            "textures/title.webp",
+            "textures/title.png"
           ],
           "data": {
             "tags": {

@@ -4,7 +4,7 @@
  * Description:
  */
 
-import { Container, Assets, Sprite, Text } from "pixi.js";
+import { Container, Assets, Sprite, BitmapText } from "pixi.js";
 
 export default class MainMenuScene {
     constructor(game) {
@@ -27,13 +27,16 @@ export default class MainMenuScene {
         const backgroundSprite = new Sprite(backgroundTexture);
         this.stage.addChild(backgroundSprite);
 
+
+
         // start button
-        const startText = new Text({
+        const startText = new BitmapText({
             text: "Press Space to Start",
             style: {
                 fontFamily: "Jersey",
-                fontSize: 16,
-                fontWeight: "light",
+                fontSize: 12,
+                fill: 0x000000,
+                align: 'end'
             },
             anchor: {
                 x: 1,
@@ -66,9 +69,9 @@ export default class MainMenuScene {
     }
     update(ticker) {
         // flash the start text
-        const startText = this.stage.children.find(child => child instanceof Text);
+        const startText = this.stage.children.find(child => child instanceof BitmapText);
         if (startText) {
-            startText.alpha = 0.75 + 0.5 * Math.sin(2 * ticker.lastTime / 300);
+            startText.alpha = 0.75 + 0.35 * Math.sin(2 * ticker.lastTime / 300);
         }
     }
 }

@@ -1,5 +1,5 @@
 import { Assets } from "pixi.js";
-
+import { BitmapFont, Texture } from 'pixi.js';
 import MainMenuScene from "./scenes/main_menu.js";
 import MainGameScene from "./scenes/main_game.js";
 import GameOverScene from "./scenes/game_over.js";
@@ -8,7 +8,6 @@ export class Game {
     // The Game class manages the overall game state, including loading assets, initializing scenes, and handling the game loop.
     constructor(pixiApp) {
         this.app = pixiApp;
-        this.currentScene = null;
     };
 
     // Load game assets (e.g. textures, sounds) before starting the game
@@ -19,6 +18,9 @@ export class Game {
         await Assets.loadBundle('sprites');
         await Assets.loadBundle('fonts');
         await Assets.loadBundle('textures');
+
+        
+
     }
 
 

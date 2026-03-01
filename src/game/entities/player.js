@@ -65,13 +65,13 @@ export class Player extends AnimatedSprite {
         this.currentDirectionAngle = Math.max(this.currentDirectionAngle, Math.PI / 2);
         this.currentVelocity = { x: Math.sin(this.currentDirectionAngle) * this.constantVelocity, y: Math.cos(this.currentDirectionAngle) * this.constantVelocity };
         let newDirection = this.currentDirection;
-        if (this.currentVelocity.x >= 0.995) {
+        if (this.currentVelocity.x >= 0.9*this.constantVelocity) {
             newDirection = 'right';
-        } else if (this.currentVelocity.x > 0.25) {
+        } else if (this.currentVelocity.x > 0.25*this.constantVelocity) {
             newDirection = 'down_right';
-        } else if (this.currentVelocity.x <= -0.995) {
+        } else if (this.currentVelocity.x <= -0.9*this.constantVelocity) {
             newDirection = 'left';
-        } else if (this.currentVelocity.x < -0.25) {
+        } else if (this.currentVelocity.x < -0.25*this.constantVelocity) {
             newDirection = 'down_left';
         } else {
             newDirection = 'down';

@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { AssetPack } from '@assetpack/core';
 import { pixiPipes } from '@assetpack/core/pixi';
+import { msdfFont } from "@assetpack/core/webfont";
 
 function assetPackPlugin() {
     let mode;
@@ -8,7 +9,12 @@ function assetPackPlugin() {
     const apConfig = {
         entry: './raw_assets',
         pipes: [
-            ...pixiPipes({ manifest: { output: './src/manifest.json' } })
+            msdfFont({             // Process {msdf} tagged fonts to MSDF bitmap fonts
+            font: {
+                textureSize: [512, 512]  // Custom texture size
+            }
+        }),
+            ...pixiPipes({ manifest: { output: './src/manifest.json' }, cacheBust: false }),
         ]
     }
     return {
@@ -18,7 +24,7 @@ function assetPackPlugin() {
             if (!resolvedConfig.publicDir) return;
             if (apConfig.output) return;
             const publicDir = resolvedConfig.publicDir.replace(process.cwd(), '');
-            apConfig.output = `${publicDir}/`;
+            apConfig.output = `${publicDir}`;
 
         },
         buildStart: async () => {

@@ -1,15 +1,15 @@
-import { Assets, Text, Container } from "pixi.js";
+import { Assets, BitmapText, Container } from "pixi.js";
 
 export class Lives extends Container {
     constructor() {
         super({ isRenderGroup: false });
         this.lives = 3;
-        this.livesText = new Text({
+        this.livesText = new BitmapText({
             text: "Lives: 3",
             style: {
                 fontFamily: "Jersey",
                 fontSize: 16,
-                fontWeight: "light",
+                fill: 0x000000,
             },
             anchor: {
                 x: 1,
@@ -21,12 +21,11 @@ export class Lives extends Container {
         this.addChild(this.livesText);
     }
     plusOneLivesAnnouncement() {
-        const plusOneText = new Text({
+        const plusOneText = new BitmapText({
             text: "+1 Life!",
             style: {
                 fontFamily: "Jersey",
                 fontSize: 16,
-                fontWeight: "light",
                 fill: "green",
             },
             anchor: {
@@ -42,12 +41,11 @@ export class Lives extends Container {
         }, 800);
     }
     minusOneLivesAnnouncement() {
-        const minusOneText = new Text({
+        const minusOneText = new BitmapText({
             text: "-1 Life!",
             style: {
                 fontFamily: "Jersey",
                 fontSize: 16,
-                fontWeight: "light",
                 fill: "red",
             },
             anchor: {

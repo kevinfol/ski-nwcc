@@ -13,6 +13,7 @@ import { SpawnManager } from "../systems/spawn";
 import { detectCollisionPixelPerfect } from "../systems/collision";
 import { Score } from "../entities/score";
 import { Lives } from "../entities/lives";
+import { Laser } from "../entities/doggie";
 
 export default class MainGameScene {
     constructor(game) {
@@ -83,12 +84,12 @@ export default class MainGameScene {
     }
     initializeHudGroup() {
         this.score = new Score()
-        this.score.x = 10;
-        this.score.y = 10;
+        this.score.x = 5;
+        this.score.y = 0;
         this.hudGroup.addChild(this.score);
         this.lives = new Lives();
-        this.lives.x = this.game.app._width_ - 10;
-        this.lives.y = 10;
+        this.lives.x = this.game.app._width_ - 5;
+        this.lives.y = 0;
         this.hudGroup.addChild(this.lives);
         const onLiveLost = () => {
             this.lives.decrementLives(1);
@@ -111,8 +112,8 @@ export default class MainGameScene {
         // move the snow effect
         this.snowEffect.tilePosition.x -= 0.25;
         this.snowEffect.tilePosition.y += 0.5;
-
-        this.updateDifficulty((new Date().getTime() / 1000) - this.startTime);
+        const timeElapsed = (new Date().getTime() / 1000) - this.startTime;
+        this.updateDifficulty(timeElapsed);
 
         // update the score
         if (!this.player.isCrashed) {
@@ -150,8 +151,30 @@ export default class MainGameScene {
                     const velocityY = Math.sin(angleToPlayer) * 1.9;
                     obstacle.x += velocityX;
                     obstacle.y += velocityY;
+
+                    if (obstacle.isLaser) {
+                        // if the doggie is a laser doggie, it fires a laser towards the player every 0.5 seconds
+                        if (obstacle.timeToShootLaser(timeElapsed)) {
+                            const laser = new Laser();
+                            laser.x = obstacle.x;
+                            laser.y = obstacle.y;
+                            const angleToPlayer = Math.atan2(this.player.y + 50 - obstacle.y, this.player.x - obstacle.x);
+                            const velocityX = Math.cos(angleToPlayer) * 5;
+                            const velocityY = Math.sin(angleToPlayer) * 5;
+                            laser.vx = velocityX;
+                            laser.vy = velocityY;
+                            this.obstacleGroup.addChild(laser);
+                            this.entityList.push(laser);
+                        }
+
+                    }
                 }
 
+            }
+
+            if (obstacle?.isLaserBeam) {
+                obstacle.x += obstacle.vx;
+                obstacle.y += obstacle.vy;
             }
 
 
@@ -168,7 +191,7 @@ export default class MainGameScene {
                 if (obstacle.passedAllGates(this.player)) {
                     this.score.incrementScore(100);
                 };
-                for (const child of obstacle.children) {
+                for (const child of obstacle.entities) {
                     if (detectCollisionPixelPerfect(this.player, child)) {
                         this.obstacleGroup.removeChild(obstacle);
                         this.entityList = this.entityList.filter(e => e !== obstacle);

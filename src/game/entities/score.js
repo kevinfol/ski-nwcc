@@ -1,15 +1,15 @@
-import { Text, Assets, Container } from "pixi.js";
+import { BitmapText, Assets, Container } from "pixi.js";
 
 export class Score extends Container {
     constructor() {
         super({ isRenderGroup: false });
         this.score = 0;
-        this.scoreText = new Text({
+        this.scoreText = new BitmapText({
             text: "Score: 0",
             style: {
                 fontFamily: "Jersey",
                 fontSize: 16,
-                fontWeight: "light",
+                fill: 0x000000,
             },
             anchor: {
                 x: 0,

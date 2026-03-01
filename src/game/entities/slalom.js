@@ -1,4 +1,4 @@
-import { AnimatedSprite, Assets, Container } from "pixi.js";
+import { AnimatedSprite, Assets, Container, Graphics } from "pixi.js";
 import { OutlineFilter } from "pixi-filters";
 
 class SlalomStart extends AnimatedSprite {
@@ -94,6 +94,7 @@ export class SlalomCourse extends Container {
         this.entities.push(this.endRight);
 
         this.determineDimensions();
+
 
     }
 

@@ -4,23 +4,25 @@
  * Description:
  */
 
-import { Container, Assets, Text } from "pixi.js";
+import { Container, Assets, BitmapText } from "pixi.js";
 
 export default class GameOverScene {
     constructor(game) {
         this.game = game;
         this._score = -9999;
     };
-    initialize() {
+    async initialize() {
+        
         this.stage = new Container();
         this.game.app.stage.addChild(this.stage);
 
-        const gameOverText = new Text({
+        const gameOverText = new BitmapText({
             text: "Game Over",
             style: {
                 fontFamily: "Jersey",
                 fontSize: 48,
-                fontWeight: "bold",
+                fill: 0x000000,
+                //fontWeight: "bold",
             }
         });
         gameOverText.anchor.set(0.5);
@@ -28,14 +30,15 @@ export default class GameOverScene {
         gameOverText.y = this.game.app._height_ / 2 - 50;
         this.stage.addChild(gameOverText);
 
-        const scoreText = new Text({
+        const scoreText = new BitmapText({
             text: `Final Score: ${this._score}`,
             style: {
                 fontFamily: "Jersey",
-                fontSize: 24,
-                fontWeight: "light",
+                fontSize: 20,
+                fill: 0x0000ff,
+                //fontWeight: "light",
             },
-            anch1or: {
+            anchor: {
                 x: 0.5,
                 y: 0.5
             }
@@ -44,12 +47,13 @@ export default class GameOverScene {
         scoreText.y = this.game.app._height_ / 2 + 20;
         this.stage.addChild(scoreText);
 
-        this.restartText = new Text({
+        this.restartText = new BitmapText({
             text: "Press Space to Restart",
             style: {
                 fontFamily: "Jersey",
                 fontSize: 16,
-                fontWeight: "light",
+                fill: 0x000000,
+                //fontWeight: "light",
             }
         });
         this.restartText.anchor.set(0.5);
