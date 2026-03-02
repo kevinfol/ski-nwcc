@@ -27,6 +27,40 @@
       ]
     },
     {
+      "name": "sounds",
+      "assets": [
+        {
+          "alias": [
+            "sounds/ipanema.mid",
+            "ipanema.mid"
+          ],
+          "src": [
+            "sounds/ipanema.mid"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        },
+        {
+          "alias": [
+            "sounds/ipanema.mp3",
+            "ipanema.mp3"
+          ],
+          "src": [
+            "sounds/ipanema.ogg",
+            "sounds/ipanema.mp3"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        }
+      ]
+    },
+    {
       "name": "sprites",
       "assets": [
         {

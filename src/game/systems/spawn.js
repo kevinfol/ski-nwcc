@@ -9,7 +9,6 @@ const spawnProbabilities = {
     'rock': 0.3,
     'slalom': 0.02,
     'newLife': 0.04,
-    'ramp': 0.34
 }
 
 export class SpawnManager {
